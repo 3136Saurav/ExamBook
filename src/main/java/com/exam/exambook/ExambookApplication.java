@@ -30,8 +30,7 @@ public class ExambookApplication implements CommandLineRunner {
 
 		user.setFirstName("Mark");
 		user.setLastName("Henry");
-		user.setEmail("mark@henry.com");
-		user.setPassword("mark123");
+	
 		user.setProfile("default.png");
 
 		Role role1 = new Role();
