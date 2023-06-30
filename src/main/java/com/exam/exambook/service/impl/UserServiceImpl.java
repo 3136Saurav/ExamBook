@@ -20,6 +20,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User createUser(User user, Set<UserRole> userRoles) throws Exception {
+        if (user.getUsername() == null || user.getUsername().isBlank()) {
+            throw new Exception("Username cannot be blank!");
+        }
         User local = userRepository.findByUsername(user.getUsername());
 
         if (local != null) {

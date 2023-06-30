@@ -11,7 +11,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
+@CrossOrigin("*")
 public class UserController {
 
     @Autowired
