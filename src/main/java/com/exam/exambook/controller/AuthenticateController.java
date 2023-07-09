@@ -2,8 +2,10 @@ package com.exam.exambook.controller;
 
 
 import com.exam.exambook.config.JwtUtil;
+import com.exam.exambook.exception.InvalidCredentialsException;
 import com.exam.exambook.model.JwtRequest;
 import com.exam.exambook.model.JwtResponse;
+import com.exam.exambook.model.User;
 import com.exam.exambook.service.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,11 +15,12 @@ import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
 
 @RestController
+@CrossOrigin("*")
 public class AuthenticateController {
 
     @Autowired
@@ -45,6 +48,11 @@ public class AuthenticateController {
         return ResponseEntity.ok(new JwtResponse(token));
     }
 
+    @GetMapping("/current-user")
+    public User getCurrentUser(Principal principal) {
+        return (User)userDetailsService.loadUserByUsername(principal.getName());
+    }
+
     public void authenticate(String username, String password) throws Exception {
         try {
 
@@ -53,7 +61,7 @@ public class AuthenticateController {
         } catch (DisabledException e) {
             throw new Exception("User Disabled: " + e.getMessage());
         } catch (BadCredentialsException e) {
-            throw new Exception("Invalid Credentials" + e.getMessage());
+            throw new InvalidCredentialsException("Invalid Credentials");
         }
     }
 

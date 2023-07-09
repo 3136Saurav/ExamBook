@@ -26,25 +26,28 @@ public class ExambookApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		System.out.println("===================== Starting Exam Book =====================");
 
-		/* User user = new User();
-
-		user.setFirstName("Mark");
-		user.setLastName("Henry");
-	
-		user.setProfile("default.png");
-
-		Role role1 = new Role();
-		role1.setRoleName("ADMIN");
-
-		Set<UserRole> userRoleSet = new HashSet<>();
-		UserRole userRole = new UserRole();
-
-		userRole.setRole(role1);
-		userRole.setUser(user);
-
-		userRoleSet.add(userRole);
-
-		User user1 = userService.createUser(user, userRoleSet);
-		System.out.println(user1); */
+//		User user = new User();
+//
+//		user.setFirstName("Drake");
+//		user.setLastName("Parker");
+//		user.setUsername("drake12");
+//		user.setPassword("drake123");
+//		user.setEmail("drake@parker.com");
+//		user.setPhone("+1-5546323210");
+//		user.setProfile("default.png");
+//
+//		Role role1 = new Role();
+//		role1.setRoleName("ADMIN");
+//
+//		Set<UserRole> userRoleSet = new HashSet<>();
+//		UserRole userRole = new UserRole();
+//
+//		userRole.setRole(role1);
+//		userRole.setUser(user);
+//
+//		userRoleSet.add(userRole);
+//
+//		User user1 = userService.createUser(user, userRoleSet);
+//		System.out.println(user1);
 	}
 }

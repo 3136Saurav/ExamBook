@@ -6,6 +6,7 @@ import com.exam.exambook.model.UserRole;
 import com.exam.exambook.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.HashSet;
 import java.util.Set;
