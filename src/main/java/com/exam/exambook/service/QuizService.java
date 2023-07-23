@@ -3,6 +3,7 @@ package com.exam.exambook.service;
 import com.exam.exambook.model.Quiz;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 
@@ -17,4 +18,6 @@ public interface QuizService {
     public Quiz getQuiz(Long quizId);
 
     public void deleteQuiz(Long quizId);
+
+    public List<Quiz> getQuizOfCategory(Long categoryId);
 }
