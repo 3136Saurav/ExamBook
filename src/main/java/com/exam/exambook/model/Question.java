@@ -1,5 +1,7 @@
 package com.exam.exambook.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -24,6 +26,8 @@ public class Question {
 
     private String answer;
 
+    @Transient
+    private String givenAnswer;
     public Question() {
     }
 
@@ -103,6 +107,14 @@ public class Question {
 
     public String getAnswer() {
         return answer;
+    }
+
+    public String getGivenAnswer() {
+        return givenAnswer;
+    }
+
+    public void setGivenAnswer(String givenAnswer) {
+        this.givenAnswer = givenAnswer;
     }
 
     public void setAnswer(String answer) {
